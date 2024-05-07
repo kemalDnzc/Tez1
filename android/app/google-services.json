@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "901068375184",
+    "project_id": "takiuygulamasi",
+    "storage_bucket": "takiuygulamasi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901068375184:android:78a5636fca393b95d88415",
+        "android_client_info": {
+          "package_name": "com.example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY7_UMyTrExoSjZBjeWCLAgqqM05ewo3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901068375184:android:49b7824935c50ee0d88415",
+        "android_client_info": {
+          "package_name": "com.example.taki"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY7_UMyTrExoSjZBjeWCLAgqqM05ewo3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

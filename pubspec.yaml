@@ -1,0 +1,31 @@
+name: taki
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  firebase_auth: ^4.19.4
+  firebase_core: ^2.30.1
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - resimler/hotel.png
+    - resimler/taki1.jpeg
+    - resimler/taki2.jpeg
+    - resimler/taki3.jpeg
+    - resimler/taki4.jpeg
+    - resimler/logo.jpeg
+
+
