@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
 import 'HomePage.dart';
 
 class LoginPage extends StatelessWidget {
@@ -22,113 +26,121 @@ class LoginPage extends StatelessWidget {
     }
 
   }
-
-
+  late Size mediaSize;
   @override
   Widget build(BuildContext context) {
+    mediaSize = MediaQuery.of(context).size;
+    //var ekranBilgisi = MediaQuery.of(context);
+    //final double ekranYuksekligi = ekranBilgisi.size.height;
+    //final double ekranGenisligi = ekranBilgisi.size.width;
 
-    var ekranBilgisi = MediaQuery.of(context);
-    final double ekranYuksekligi = ekranBilgisi.size.height;
-    final double ekranGenisligi = ekranBilgisi.size.width;
-
-    return Scaffold(
-      backgroundColor: const Color.fromRGBO(60, 91, 111, 1),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+    return Container(
+        decoration: BoxDecoration(
+          color: Colors.deepPurple,
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Stack(
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: ekranYuksekligi / 15),
-                child: SizedBox(
-                    width: ekranGenisligi / 1.2,
-                    height: ekranYuksekligi / 10,
-                    //child: Image.asset("resimler/logo.jpeg")
-                    child: Text(
-                      "Merhaba",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(ekranYuksekligi / 30),
-                child: TextField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    hintStyle: TextStyle(color: Colors.grey),
-                    hintText: "Kullanıcı Adı",
-                    fillColor: Colors.white,
-                    prefixIcon: Icon(
-                      Icons.person,
-                      color: Colors.grey,
-                    ),
-                    /*border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    ),*/
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(ekranYuksekligi / 30),
-                child: TextField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintStyle: TextStyle(color: Colors.grey),
-                    hintText: "Şifre",
-                    fillColor: Colors.white,
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      color: Colors.grey,
-                    ),
-                    /*border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    ),*/
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(ekranYuksekligi/30),
-                child: SizedBox(
-                  width: ekranGenisligi / 1.5,
-                  height: ekranYuksekligi / 20,
-                  child: ElevatedButton(
-                    child: Text("GİRİŞ YAP", style: TextStyle(fontSize: ekranGenisligi/25)),
-                    onPressed: () => _signInWithEmailAndPassword(context),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.pink,
-                      foregroundColor: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              Text(
-                "Şifremi Unuttum !",
-                style: TextStyle(
-                  color: Colors.pink,
-                  fontWeight: FontWeight.bold,
-                  fontSize: ekranGenisligi / 30,
-                ),
-              ),
+              Positioned(top: 80, child: _buildTop()),
+              Positioned(bottom: 0, child: _buildBottom(context)),
             ],
           ),
         ),
+    );
+  }
+  Widget _buildTop() {
+    return SizedBox(
+      width: mediaSize.width,
+      child: const Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.lock,
+            size: 80,
+            color: Colors.white,
+          ),
+          Text(
+            "LOGIN",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+              letterSpacing: 2,
+            ),
+          ),
+        ],
       ),
+    );
+  }
+  Widget _buildBottom(BuildContext context) {
+    return SizedBox(
+      width: mediaSize.width,
+      child: Card(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          )
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: _buildForm(context),
+        ),
+      ),
+    );
+  }
+  Widget _buildForm(BuildContext context){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Welcome",
+          style: TextStyle(
+            color: Colors.deepPurple,
+            fontSize: 32,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        _buildGreyText("Please login with your information"),
+        const SizedBox(height: 60),
+        _buildGreyText("Kullanıcı Adı"),
+        _buildInputField(_emailController, prefixIcon: Icons.person, prefixIconColor: Color.fromRGBO(225, 175, 209, 10)),
+        const SizedBox(height: 40),
+        _buildGreyText("Şifre"),
+        _buildInputField(_passwordController, isPassword: true, prefixIcon: Icons.lock, prefixIconColor: Color.fromRGBO(225, 175, 209, 10)),
+        const SizedBox(height: 20),
+        _buildLoginButton(context),
+      ],
+    );
+  }
+  Widget _buildGreyText(String text){
+    return Text(
+      text,
+      style: const TextStyle(color: Color.fromRGBO(225, 175, 209, 10)),
+    );
+  }
+  Widget _buildInputField(TextEditingController controller, {isPassword = false, IconData? prefixIcon, Color? prefixIconColor}){
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        //prefixIcon: prefixIcon != null ? Icon(prefixIcon, color: prefixIconColor,) : null,
+        suffixIcon: isPassword?Icon(Icons.remove_red_eye):Icon(Icons.person),
+      ),
+      obscureText: isPassword,
+    );
+  }
+  Widget _buildLoginButton(BuildContext context){
+    return ElevatedButton(
+      onPressed: () => _signInWithEmailAndPassword(context),
+      style: ElevatedButton.styleFrom(
+        shape: const StadiumBorder(),
+        elevation: 20,
+        shadowColor: Colors.green,
+        backgroundColor: Colors.green,
+        minimumSize: const Size.fromHeight(60),
+      ),
+      child: const Text("Giriş Yap"),
     );
   }
 }

@@ -25,6 +25,7 @@ class ProductPage extends StatelessWidget {
           )
         ],
       ),
+      backgroundColor: const Color.fromRGBO(60, 91, 111, 1),
       drawer: Sidebar(),
       body: ListView(
         children: [

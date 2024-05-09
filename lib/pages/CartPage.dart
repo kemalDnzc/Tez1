@@ -46,12 +46,12 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         elevation: 0,
-        foregroundColor: Theme.of(context).colorScheme.inversePrimary,
+        foregroundColor: Colors.white,
         title: const Text("Sepetim"),
         centerTitle: true,
       ),
       drawer: Sidebar(),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: const Color.fromRGBO(60, 91, 111, 1),
       body: Column(
         children: [
           Expanded(

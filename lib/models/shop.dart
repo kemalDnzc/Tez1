@@ -8,28 +8,28 @@ class Shop extends ChangeNotifier {
         name: "Product 1",
         price: 99.99,
         description: "İtem description",
-        imagePath: 'resimler/taki1.jpeg',
+        imagePath: 'resimler/hyvnmodel0.png',
       ),
 
         Product(
           name: "Product 2",
           price: 100.99,
           description: "İtem description 1",
-          imagePath: 'resimler/taki2.jpeg',
+          imagePath: 'resimler/hyvnmodel1.png',
         ),
 
         Product(
           name: "Product 3",
           price: 45.99,
           description: "İtem description 2",
-          imagePath: 'resimler/taki3.jpeg',
+          imagePath: 'resimler/hyvnmodel2.png',
         ),
 
         Product(
           name: "Product 4",
           price: 31.99,
           description: "İtem description 3",
-          imagePath: 'resimler/taki4.jpeg',
+          imagePath: 'resimler/slhmodel.png',
         ),
   ];
 
