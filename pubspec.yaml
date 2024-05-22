@@ -9,9 +9,12 @@ environment:
 dependencies:
   firebase_auth: ^4.19.4
   firebase_core: ^2.30.1
+  firebase_database: ^10.5.5
+  cloud_firestore: ^4.17.2
   flutter:
     sdk: flutter
   provider: ^6.1.2
+  flutter_colorpicker: ^0.5.0
 
 dev_dependencies:
   flutter_test:
@@ -27,5 +30,12 @@ flutter:
     - resimler/taki3.jpeg
     - resimler/taki4.jpeg
     - resimler/logo.jpeg
+    - resimler/hyvnmodel0.png
+    - resimler/hyvnmodel1.png
+    - resimler/hyvnmodel2.png
+    - resimler/slhmodel.png
+    - resimler/hcmodel.png
+    - resimler/slhmodel2.png
+    - resimler/dnzmodel.png
 
 

@@ -1,0 +1,67 @@
+{
+  "products": {
+    "product1": {
+      "name": "K1001",
+      "price": 99.99,
+      "description": "Item description",
+      "imagePath": "resimler/hyvnmodel0.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product2": {
+      "name": "K1002",
+      "price": 100.99,
+      "description": "Item description 1",
+      "imagePath": "resimler/hyvnmodel1.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product3": {
+      "name": "K1003",
+      "price": 39.99,
+      "description": "Description of product 2",
+      "imagePath": "resimler/hyvnmodel2.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product4": {
+      "name": "K1004",
+      "price": 39.99,
+      "description": "Description of product 2",
+      "imagePath": "resimler/slhmodel.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product5": {
+      "name": "K1005",
+      "price": 39.99,
+      "description": "Description of product 2",
+      "imagePath": "resimler/hcmodel.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product6": {
+      "name": "K1006",
+      "price": 39.99,
+      "description": "Description of product 2",
+      "imagePath": "resimler/slhmodel2.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product7": {
+      "name": "K1007",
+      "price": 39.99,
+      "description": "Description of product 2",
+      "imagePath": "resimler/dnzmodel.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    }
+  }
+}

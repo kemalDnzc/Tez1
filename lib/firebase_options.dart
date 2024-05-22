@@ -46,6 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '901068375184',
     projectId: 'takiuygulamasi',
     authDomain: 'takiuygulamasi.firebaseapp.com',
+    databaseURL: 'https://takiuygulamasi-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'takiuygulamasi.appspot.com',
     measurementId: 'G-KMDBT3KRH6',
   );
@@ -55,6 +56,7 @@ class DefaultFirebaseOptions {
     appId: '1:901068375184:android:49b7824935c50ee0d88415',
     messagingSenderId: '901068375184',
     projectId: 'takiuygulamasi',
+    databaseURL: 'https://takiuygulamasi-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'takiuygulamasi.appspot.com',
   );
 
@@ -63,6 +65,7 @@ class DefaultFirebaseOptions {
     appId: '1:901068375184:ios:e313e6761659a6d8d88415',
     messagingSenderId: '901068375184',
     projectId: 'takiuygulamasi',
+    databaseURL: 'https://takiuygulamasi-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'takiuygulamasi.appspot.com',
     iosBundleId: 'com.example.taki',
   );
@@ -72,6 +75,7 @@ class DefaultFirebaseOptions {
     appId: '1:901068375184:ios:e313e6761659a6d8d88415',
     messagingSenderId: '901068375184',
     projectId: 'takiuygulamasi',
+    databaseURL: 'https://takiuygulamasi-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'takiuygulamasi.appspot.com',
     iosBundleId: 'com.example.taki',
   );
@@ -82,6 +86,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '901068375184',
     projectId: 'takiuygulamasi',
     authDomain: 'takiuygulamasi.firebaseapp.com',
+    databaseURL: 'https://takiuygulamasi-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'takiuygulamasi.appspot.com',
     measurementId: 'G-YE9V66ETH2',
   );

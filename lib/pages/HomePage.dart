@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taki/models/cart.dart';
 import 'package:taki/components/side_bar.dart';
@@ -10,22 +11,26 @@ class HomePage extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     List<String> imageList = [
-      "assets/resimler/hyvnmodel0.png",
-      "assets/resimler/hyvnmodel1.png",
-      "assets/resimler/hyvnmodel2.png",
-      "assets/resimler/slhmodel.png"
+      "resimler/hyvnmodel0.png",
+      "resimler/hyvnmodel1.png",
+      "resimler/hyvnmodel2.png",
+      "resimler/slhmodel.png",
+      "resimler/hcmodel.png",
+      "resimler/slhmodel2.png",
+      "resimler/dnzmodel.png"
     ];
 
     return Scaffold(
-      drawer: Sidebar(),
       appBar: AppBar(
         title: const Text(
           'Vitrin',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: const Color.fromRGBO(21, 52, 72, 1),
+        centerTitle: true,
+        backgroundColor: Color.fromRGBO(21, 52, 72, 1),
       ),
       backgroundColor: const Color.fromRGBO(60, 91, 111, 1),
+      drawer: Sidebar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

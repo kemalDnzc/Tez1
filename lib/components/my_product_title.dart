@@ -1,41 +1,37 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:taki/components/popup_shop.dart';
 import 'package:taki/models/products.dart';
-import 'package:taki/models/shop.dart';
-import 'package:provider/provider.dart';
 
 class MyProductTitle extends StatelessWidget {
   final Product product;
+  final String size;
+  final String color;
+  final int quantity;
 
-  const MyProductTitle ({
-    super.key,
+  const MyProductTitle({
+    Key? key,
     required this.product,
-  });
-  
-  void addToCart(BuildContext context){
-    showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          content: Text("Ürünü sepete ekleyecek misiniz ?"),
-          actions: [
-            MaterialButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text("Cancel"),
-            ),
-            MaterialButton(
-              onPressed: () {
-                Navigator.pop(context);
-                context.read<Shop>().addToCart(product);
-              },
-              child: Text("Yes"),
-            ),
-          ],
-        ),
-    );
-  }
+    required this.size,
+    required this.color,
+    required this.quantity,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    /*return Card(
+      child: Column(
+        children: [
+          Image.asset(product.imagePath),
+          Text(product.name),
+          Text(product.description),
+          Text('Fiyat: ${product.price}'),
+          Text('Renk: $color'),
+          Text('Beden: $size'),
+          Text('Miktar: $quantity'),
+        ],
+      ),
+    );*/
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
@@ -59,11 +55,10 @@ class MyProductTitle extends StatelessWidget {
                   ),
                   padding: EdgeInsets.all(25),
                   width: double.infinity,
-                  child: Image.asset(product.imagePath),
+                  child: Image.asset(product.imagePath), // Image.asset yerine Image.network
                 ),
               ),
               const SizedBox(height: 25),
-
               Text(
                 product.name,
                 style: TextStyle(
@@ -72,7 +67,6 @@ class MyProductTitle extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-
               Text(
                 product.description,
                 style: TextStyle(
@@ -82,7 +76,6 @@ class MyProductTitle extends StatelessWidget {
               const SizedBox(height: 10),
             ],
           ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -93,7 +86,14 @@ class MyProductTitle extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: IconButton(
-                  onPressed: () => addToCart(context),
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Popup(product: product, size: product.size, color: product.color, quantity: product.quantity);
+                      },
+                    );
+                  },
                   icon: const Icon(Icons.add),
                 ),
               )
