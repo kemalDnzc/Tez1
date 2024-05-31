@@ -1,0 +1,92 @@
+{
+  "products": {
+    "product17": {
+      "name": "K1512",
+      "grammage": 1.70,
+      "imagePath": "assets/resimler/HA1512.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product18": {
+      "name": "K2091",
+      "grammage": 1.50,
+      "imagePath": "assets/resimler/HA2091.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product19": {
+      "name": "K2092",
+      "grammage": 1.15,
+      "imagePath": "assets/resimler/HA2121.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product20": {
+      "name": "K2121",
+      "grammage": 1.50,
+      "imagePath": "assets/resimler/HA2121.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product21": {
+      "name": "",
+      "grammage": 2.80,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product22": {
+      "name": "",
+      "grammage": 2.20,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product23": {
+      "name": "",
+      "grammage": 0.00,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product24": {
+      "name": "",
+      "grammage": 0.45,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product25": {
+      "name": "",
+      "grammage": 6.20,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product26": {
+      "name": "",
+      "grammage": 5.15,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product27": {
+      "name": "",
+      "grammage": 0.60,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    }
+  }
+}

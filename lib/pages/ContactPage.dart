@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taki/components/side_bar.dart';
+import 'package:taki/models/FireStoreOrder.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({super.key});
@@ -11,6 +12,7 @@ class ContactPage extends StatefulWidget {
 class _ContactPageState extends State<ContactPage>{
   final _formKey = GlobalKey<FormState>();
   final _commentController = TextEditingController();
+  final FirestoreService _firestoreService = FirestoreService();
 
   @override
   void dispose() {
@@ -18,14 +20,20 @@ class _ContactPageState extends State<ContactPage>{
     super.dispose();
   }
 
-  void _submitComment() {
+  void _submitComment() async {
     if (_formKey.currentState!.validate()) {
       final comment = _commentController.text;
-      print('Yorum: $comment');
-      _commentController.clear();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Yorumunuz gönderildi!')),
-      );
+      try {
+        await _firestoreService.saveComment(comment);
+        _commentController.clear();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Yorumunuz gönderildi!')),
+        );
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Yorum gönderilirken bir hata oluştu: $e')),
+        );
+      }
     }
   }
 
@@ -38,7 +46,6 @@ class _ContactPageState extends State<ContactPage>{
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Color.fromRGBO(21, 52, 72, 1),
-        centerTitle: true,
       ),
       backgroundColor: const Color.fromRGBO(60, 91, 111, 1),
       drawer: Sidebar(),
@@ -48,14 +55,14 @@ class _ContactPageState extends State<ContactPage>{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Card(
-              color: Colors.green,
+              color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Misyonumuz malzemelerimiz daha sağlam bir şekilde işlemek ve alıcılarımızı memnun etmektir',
+                      'Misyonumuz: Ürünlerimiz garantili ve kaliteli bir şekilde sağlıklı olarak tedariğini sağlamaktayız',
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 8),
@@ -70,7 +77,7 @@ class _ContactPageState extends State<ContactPage>{
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'E-posta: kemalemir.denizci@gmail.com',
+                      'E-posta: admin@gmail.com',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],

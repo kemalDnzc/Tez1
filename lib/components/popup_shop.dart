@@ -15,8 +15,8 @@ class Popup extends StatefulWidget {
     Key? key,
     required this.product,
     required this.size,
-    required this.color,
     required this.quantity,
+    required this.color,
   }) : super(key: key);
 
   @override
@@ -56,7 +56,7 @@ class _PopupState extends State<Popup> {
               height: MediaQuery.of(context).size.height * 0.8,
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               decoration: BoxDecoration(
-                color: Color.fromRGBO(223, 208, 184, 5),
+                color: Color.fromRGBO(223, 208, 184, 1),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: Column(
@@ -66,7 +66,7 @@ class _PopupState extends State<Popup> {
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Adet',
-                      labelStyle: TextStyle(color: Colors.lightBlue),
+                      labelStyle: TextStyle(color: Colors.black),
                     ),
                     keyboardType: TextInputType.number,
                     onChanged: (value) {
@@ -89,7 +89,7 @@ class _PopupState extends State<Popup> {
                         value: value,
                         child: Text(
                           'Ayar: $value',
-                          style: TextStyle(color: Colors.lightBlue),
+                          style: TextStyle(color: Colors.black),
                         ),
                       );
                     }).toList(),
@@ -108,7 +108,7 @@ class _PopupState extends State<Popup> {
                         value: value,
                         child: Text(
                           'Color: $value',
-                          style: TextStyle(color: Colors.lightBlue),
+                          style: TextStyle(color: Colors.black),
                         ),
                       );
                     }).toList(),
@@ -120,9 +120,10 @@ class _PopupState extends State<Popup> {
                         Navigator.of(context).pop();
                         Product productToAdd = Product(
                           name: widget.product.name,
-                          price: widget.product.price,
+                          grammage: widget.product.grammage,
                           description: widget.product.description,
                           imagePath: widget.product.imagePath,
+                          userEmail: widget.product.userEmail,
                           color: color!,
                           size: size!,
                           quantity: quantity!,
@@ -135,7 +136,7 @@ class _PopupState extends State<Popup> {
                       }
                     },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(148, 137, 121, 1)),
                       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                       fixedSize: MaterialStateProperty.all<Size>(Size(200, 50)),
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.symmetric(vertical: 10)),
@@ -154,6 +155,7 @@ class _PopupState extends State<Popup> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
           addToCart(context);

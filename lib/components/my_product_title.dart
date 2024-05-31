@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taki/components/popup_shop.dart';
 import 'package:taki/models/products.dart';
@@ -19,46 +18,43 @@ class MyProductTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /*return Card(
-      child: Column(
-        children: [
-          Image.asset(product.imagePath),
-          Text(product.name),
-          Text(product.description),
-          Text('Fiyat: ${product.price}'),
-          Text('Renk: $color'),
-          Text('Beden: $size'),
-          Text('Miktar: $quantity'),
-        ],
-      ),
-    );*/
-    return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      margin: const EdgeInsets.all(10),
-      padding: const EdgeInsets.all(25),
-      width: 300,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
+    return GestureDetector(
+      onTap: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (BuildContext context) {
+            return Popup(
+              product: product,
+              size: size,
+              color: color,
+              quantity: quantity,
+            );
+          },
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(25),
+        width: 300,
+        child: SingleChildScrollView( // Column'ı kaydırılabilir hale getirdik.
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Column'un çocuklarına minimum yer kaplamasını söyledik.
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AspectRatio(
                 aspectRatio: 1,
                 child: Container(
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
+                  //color: Theme.of(context).colorScheme.secondary,
                   padding: EdgeInsets.all(25),
                   width: double.infinity,
-                  child: Image.asset(product.imagePath), // Image.asset yerine Image.network
+                  child: Image.asset(product.imagePath, fit: BoxFit.fill,),
                 ),
               ),
-              const SizedBox(height: 25),
+              SizedBox(height: 25),
               Text(
                 product.name,
                 style: TextStyle(
@@ -66,40 +62,45 @@ class MyProductTitle extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              const SizedBox(height: 10),
-              Text(
+              SizedBox(height: 10),
+              /*Text(
                 product.description,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.inversePrimary,
+                  //color: Theme.of(context).colorScheme.onSecondary,
                 ),
-              ),
-              const SizedBox(height: 10),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('\$' + product.price.toStringAsFixed(2)),
-              Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.secondary,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return Popup(product: product, size: product.size, color: product.color, quantity: product.quantity);
+              ),*/
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(product.grammage.toStringAsFixed(2), style: TextStyle(fontSize: 20),),
+                  Container(
+                    decoration: BoxDecoration(
+                      //color: Theme.of(context).colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: IconButton(
+                      onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Popup(
+                              product: product,
+                              size: size,
+                              color: color,
+                              quantity: quantity,
+                            );
+                          },
+                        );
                       },
-                    );
-                  },
-                  icon: const Icon(Icons.add),
-                ),
-              )
+                      icon: const Icon(Icons.add),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }

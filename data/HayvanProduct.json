@@ -1,0 +1,92 @@
+{
+  "products": {
+    "product28": {
+      "name": "K1437",
+      "grammage": 1.30,
+      "imagePath": "assets/resimler/HV1437.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product29": {
+      "name": "K867",
+      "grammage": 2.50,
+      "imagePath": "assets/resimler/HV867.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product30": {
+      "name": "K493",
+      "grammage": 20.00,
+      "imagePath": "assets/resimler/.HV493png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product31": {
+      "name": "K495",
+      "grammage": 7.00,
+      "imagePath": "assets/resimler/HV495.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product32": {
+      "name": "K1019",
+      "grammage": 11.75,
+      "imagePath": "assets/resimler/HV1019.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product33": {
+      "name": "K236",
+      "grammage": 10.80,
+      "imagePath": "assets/resimler/HV236.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product34": {
+      "name": "",
+      "grammage": 0.00,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product35": {
+      "name": "",
+      "grammage": 0.45,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product36": {
+      "name": "",
+      "grammage": 6.20,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product37": {
+      "name": "",
+      "grammage": 5.15,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product38": {
+      "name": "",
+      "grammage": 0.60,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    }
+  }
+}

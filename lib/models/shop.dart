@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:taki/models/products.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -109,18 +110,19 @@ class Shop extends ChangeNotifier {
           Map<dynamic, dynamic> item = entry.value;
           return Product(
             name: item['name'] ?? 'No name',
-            price: item['price'] ?? 0.0,
+            grammage: item['grammage'] ?? 0.0,
             description: item['description'] ?? 'No description',
             imagePath: item['imagePath'] ?? 'No image',
             color: item['color'] ?? 'No color',
             size: item['size'] ?? 'No size',
             quantity: item['quantity'] ?? 0,
+            userEmail: item['userEmail'] ?? 'No Email',
           );
         }).toList();
 
         _shop.clear();
         _shop.addAll(loadedProducts);
-        print("Yüklü Ürünler: $loadedProducts");
+        //print("Yüklü Ürünler: $loadedProducts");
         _productsFetched = true;
         notifyListeners();
       } else {
@@ -179,6 +181,25 @@ class Shop extends ChangeNotifier {
     _order.add(item);
     notifyListeners();
   }
+
+  void removeFromCart(Product item) {
+    _cart.remove(item);
+    notifyListeners();
+  }
+
+  void clearCart() {
+    _cart.clear();
+    notifyListeners();
+  }
+
+  List<Product> searchProducts(String query) {
+    if (query.isEmpty) {
+      return _shop;
+    }
+    return _shop.where((products) {
+      return products.name.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+  }
   /*void addToCartWithDefaultValues(Product item) {
     // Varsayılan değerler belirleniyor
     String defaultColor = "yellow";
@@ -200,11 +221,4 @@ class Shop extends ChangeNotifier {
     _cart.add(productToAdd);
     notifyListeners();
   }*/
-
-  void removeFromCart(Product item) {
-    _cart.remove(item);
-    notifyListeners();
-  }
-
-
 }

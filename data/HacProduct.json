@@ -1,0 +1,128 @@
+    "product8": {
+      "name": "K648",
+      "grammage": 4.50,
+      "imagePath": "assets/resimler/H648.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product9": {
+      "name": "K873",
+      "grammage": 5.90,
+      "imagePath": "assets/resimler/H873.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product10": {
+      "name": "K890",
+      "grammage": 3.70,
+      "imagePath": "assets/resimler/H890.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product11": {
+      "name": "K1088",
+      "grammage": 4.70,
+      "imagePath": "assets/resimler/H1088.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product12": {
+      "name": "K1220",
+      "grammage": 2.80,
+      "imagePath": "assets/resimler/H1220.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product13": {
+      "name": "K1931",
+      "grammage": 2.20,
+      "imagePath": "assets/resimler/H1931.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product14": {
+      "name": "K",
+      "grammage": 0.70,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product15": {
+      "name": "K",
+      "grammage": 0.45,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product16": {
+      "name": "K2032",
+      "grammage": 6.20,
+      "imagePath": "assets/resimler/H2032.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product17": {
+      "name": "K2117",
+      "grammage": 5.15,
+      "imagePath": "assets/resimler/H2117.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product19": {
+      "name": "K",
+      "grammage": 0.60,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product12": {
+      "name": "K1593",
+      "grammage": 21.00,
+      "imagePath": "assets/resimler/H1593.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product13": {
+      "name": "K2116",
+      "grammage": 1.70,
+      "imagePath": "assets/resimler/H2116.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product14": {
+      "name": "K2119",
+      "grammage": 2.60,
+      "imagePath": "assets/resimler/H2119.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product15": {
+      "name": "K2061",
+      "grammage": 2.30,
+      "imagePath": "assets/resimler/H2061.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    },
+    "product16": {
+      "name": "",
+      "grammage": 5.15,
+      "imagePath": "assets/resimler/.png",
+      "color": "white",
+      "size": "8",
+      "quantity": 0
+    }

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:taki/models/FireStoreOrder.dart';
 import 'package:taki/models/products.dart';
 import 'package:taki/models/shop.dart';
 import 'package:taki/pages/ContactPage.dart';
@@ -9,7 +10,6 @@ import 'package:taki/pages/OrderPage.dart';
 import 'package:taki/pages/ProductPage.dart';
 import 'package:taki/pages/CartPage.dart';
 import 'package:taki/pages/LoginPage.dart';
-import 'package:taki/pages/OrderStatus.dart';
 
 class Sidebar extends StatelessWidget {
   final FirebaseAuth auth = FirebaseAuth.instance;
@@ -49,11 +49,6 @@ class Sidebar extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.favorite_border),
-            title: Text('Favoriler'),
-          ),
-          Divider(),
-          ListTile(
             leading: Icon(Icons.shopping_basket_outlined),
             title: Text('Sepetim'),
             onTap: () {
@@ -75,7 +70,7 @@ class Sidebar extends StatelessWidget {
               );
             },
           ),
-          Divider(),
+          /*Divider(),
           ListTile(
             leading: Icon(Icons.checklist),
             title: Text('Sipariş Durumu'),
@@ -85,7 +80,7 @@ class Sidebar extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => OrderStatus()),
               );
             },
-          ),
+          ),*/
           Divider(),
           ListTile(
             leading: Icon(Icons.contacts_outlined),
@@ -94,6 +89,18 @@ class Sidebar extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => ContactPage()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.exit_to_app, color: Colors.red,),
+            title: Text('Çıkış Yap', style: TextStyle(color: Colors.red),),
+            onTap: () async {
+              await FirebaseAuth.instance.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
           )

@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:taki/models/products.dart';
 
-class myCard extends StatelessWidget {
-  String imgAddress;
-  myCard({super.key, required this.imgAddress});
+class myCard extends StatefulWidget {
+  final Product product;
+
+  myCard({Key? key, required this.product}) : super(key: key);
+
+  @override
+  _myCardState createState() => _myCardState();
+}
+
+class _myCardState extends State<myCard> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -12,73 +21,41 @@ class myCard extends StatelessWidget {
         width: 375,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(.5),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Stack(
           children: [
             Positioned(
-              top: 20,
-              right: 20,
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: const IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.favorite_border_outlined),
-                  color: Colors.black,
-                  iconSize: 30,
-                ),
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+              child: Image.asset(
+                widget.product.imagePath,
+                fit: BoxFit.cover, // Adjust this property to control how the image fits
               ),
             ),
             Positioned(
-              left: 50,
-              right: 50,
-              top: 50,
-              bottom: 80,
-              child: Image.asset(imgAddress),
-            ),
-            const Positioned(
               bottom: 15,
               left: 20,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Deneme",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    widget.product.name,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
                   ),
                   Text(
-                    "Deneme2",
+                    widget.product.grammage.toString(),
                     style: TextStyle(
-                      color: Colors.greenAccent,
+                      color: Colors.black,
                       fontSize: 15,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
             ),
-            Positioned(
-              bottom: 15,
-              right: 20,
-              child: Container(
-                padding:
-                const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                decoration: BoxDecoration(
-                  color: Colors.purple,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Text(
-                  "Deneme3",
-                  style: TextStyle(color: Colors.orange, fontSize: 16),
-                ),
-              ),
-            )
           ],
         ),
       ),
